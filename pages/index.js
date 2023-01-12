@@ -11,7 +11,7 @@ import SEO from '../components/SEO';
 export default function Index({ posts, globalData }) {
   const submitContact = async (event) => {
     event.preventDefault();
-    alert(`So your name is ${event}?`);
+    alert(`So your name is ${event.target.name.value}?`);
     //alert(`So your name is ${event.target.name.value}?`);
   };
   return (
