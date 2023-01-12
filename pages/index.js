@@ -9,6 +9,10 @@ import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
 export default function Index({ posts, globalData }) {
+  const submitContact = async (event) => {
+    event.preventDefault();
+    alert(`So your name is ${event.target.number.value}?`);
+  };
   return (
     <Layout>
       <SEO title={globalData.name} description={globalData.blogTitle} />
@@ -32,16 +36,15 @@ export default function Index({ posts, globalData }) {
                   </p>
                 )}
               </a>
-
-              <form action="https://wa.me/57" method="get">
-                <input type="text" id="number" name="number" />
-                <button type="submit">
-                  <ArrowIcon className="mt-4" />
-                </button>
-              </form>
             </li>
           ))}
         </ul>
+        <form onSubmit={submitContact} method="get">
+          <input type="text" id="number" name="number" />
+          <button type="submit">
+            <ArrowIcon className="mt-4" />
+          </button>
+        </form>
       </main>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
