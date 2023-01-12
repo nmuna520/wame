@@ -11,7 +11,7 @@ import SEO from '../components/SEO';
 export default function Index({ posts, globalData }) {
   const submitContact = async (event) => {
     event.preventDefault();
-    event.target.action = 'https://wa.me/57' + event.target.name.value;
+    event.target.action = 'https://wa.me/57' + event.target.number.value;
     return true;
   };
   return (
