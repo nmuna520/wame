@@ -12,7 +12,7 @@ export default function Index({ posts, globalData }) {
   const submitContact = async (event) => {
     event.preventDefault();
     event.target.action = 'https://wa.me/57' + event.target.number.value;
-    event.submit();
+    console.log(event);
   };
   return (
     <Layout>
